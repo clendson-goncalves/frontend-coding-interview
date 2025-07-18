@@ -85,7 +85,7 @@ export default function Photos() {
                         <h1 className="text-center text-xl font-semibold">All photos</h1>
                     </div>
 
-                    {/*SIGN OUT BUTTON INCLUDED, JUST TO TESTING AUTENTICATION.*/}
+                    {/*SIGN OUT BUTTON INCLUDED, JUST TO AUTENTICATION TESTING.*/}
 
                     <button onClick={handleSignOut} className="cursor-pointer text-xs text-gray-300">
                         Sign out

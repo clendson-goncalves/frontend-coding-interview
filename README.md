@@ -1,39 +1,68 @@
-# Clever's Frontend Coding Interview
-👋 Hello!, Hola!, Witam!
+# Clever's Frontend Coding Interview by Clendson Gonçalves
 
-Thank you for taking the time to interview with Clever. This coding challenge is meant to be a _short_ exercise to see how you code on the frontend. Please don't spend more than a couple hours, and certainly don't stress. Treat it like you would any other coding task. Throw on some tunes 🎶, sit back, relax 😌, and code!
+A simple, responsive photo gallery web application built with Next.js, TypeScript, and the Pexels API.
 
-### Requirements
-- Create a small web app using React and Typescript.
-- Up to you how you scaffold it (eg. Next, Vite, even CRA).
-- However, please use either `npm` or `yarn.
-- It will utilize the Pexels API to pull in some photos. Details below.
-- We'd like you to create two (mobile responsive) pages:
-  1. Sign in
-  2. All photos
-- You can fork this repo and commit your code there. Once done, please add the following users as members so we can review:
-  - James Crain (@imjamescrain)
-  - Jimmy Lien (@jlien)
-  - Nick Clucas (@nickcluc)
-  - Ryan McCue (@rymccue)
-- We'll circle back with you and review 1:1.
+## Features
 
-### Details
-- Mocks for these pages are provided in Figma. You should have been sent an invite to access them, if not let us know.
-  - [Figma Mocks](https://www.figma.com/file/wr1seCuhlRtoFGuz1iWgyF/Frontend-Coding-Mocks?type=design&node-id=0%3A1&mode=design&t=Uw1av3TypDUDcLAd-1)
-  - We are looking for attention to detail when implementing these.
-- There is also a logo and an icon provided (SVGs) included in this repo.
-- Pexels API Info
-  - Api Key: `Mz0iC21IFLz9HuN8ypIbJ54l8OuGnpW2IsVoQrYBEyagQXt1YeBEA7H0`
-  - Include an `Authorization` header with this value.
-  - Endpoint: https://api.pexels.com/v1/search?query=nature&per_page=10
-  - Documenation: https://www.pexels.com/api/documentation/#photos-search
-- Make the "Sign in" page functional. However, you can spoof authentication any way you'd like (eg. save a value to local storage, etc).
-- Make "All photos" require authentication to access.
-- Only need to show 10 photos on the "All photos" page. Paging is not required.
+- Mobile-first approach using Tailwind CSS and responsive design
+- Simple authentication system with state stored in `localStorage`
+- Like/unlike photos with state stored in `localStorage`
+- Photo gallery with images from Pexels API
+- Photographer information and portfolio links
+- Dynamic color squares using photo average colors
+- Use "SIGN OUT" to return to the sign-in page (INCLUDED JUST FOR AUTENTICATION TESTING)
 
-### Final Thoughts
+## Tech Stack
 
-Remember, please don't spend too much time on this. In fact, save a little time and **add a section to the README** outlining what else you'd do differently to make this a production ready app.
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript for type safety
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **API**: Pexels API
+- **Storage**: localStorage (for authentication and likes)
+- **ESLint**: for code quality
 
-**Any questions**, just let us know. Send emails to <a href="mailto:james.crain@movewithclever.com">james.crain@movewithclever.com</a>. Good luck!
+## Environment Variables
+
+No environment variables required - API key is included in the code for demo purposes.
+
+For production deployment, consider moving the API key to environment variables:
+
+```env
+PEXELS_API_KEY=your_api_key_here
+```
+
+## Future Enhancements
+
+- [ ] Search functionality for different photo queries
+- [ ] Photo categories (nature, city, people, etc.)
+- [ ] Full-size photo modal/lightbox
+- [ ] User profiles and photo collections
+- [ ] Photo download functionality
+- [ ] Infinite scroll or pagination
+- [ ] Real authentication system
+- [ ] Photo sharing capabilities
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/clendson-goncalves/frontend-coding-interview.git
+cd frontend-coding-interview
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Run the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.

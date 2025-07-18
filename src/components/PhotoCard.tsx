@@ -22,7 +22,7 @@ interface PhotoCardProps {
 
 export default function PhotoCard({ photo, isLiked, onToggleLike }: PhotoCardProps) {
     return (
-        <div className="flex items-start gap-2 max-w-xs md:max-w-md">
+        <div className="flex items-start gap-3 max-w-xs md:max-w-lg">
 
             <button onClick={onToggleLike} className="cursor-pointer">
                 <Star className={`w-5 h-5 ${isLiked ? "fill-yellow-400 text-yellow-400" : "text-gray-400"}`} />
@@ -32,9 +32,9 @@ export default function PhotoCard({ photo, isLiked, onToggleLike }: PhotoCardPro
                 <Image src={photo.src.medium} alt={photo.alt} fill className="object-cover" />
             </div>
 
-            <div className="flex flex-col">
-                <h3 className="text-sm font-bold text-[#111827]">{photo.photographer}</h3>
-                <p className="text-sm font-normal text-[#111827] line-clamp-2">{photo.alt}</p>
+            <div className="flex flex-col gap-0.5 md:w-[60%]">
+                <p className="text-sm font-bold text-[#111827]">{photo.photographer}</p>
+                <p className="text-sm font-normal text-[#111827] line-clamp-1">{photo.alt}</p>
                 <div className="flex items-center gap-2">
                     <p className="text-sm text-[#374824]">#{photo.id}</p>
                     <div className="w-3 h-3" style={{ backgroundColor: photo.avg_color }} />
