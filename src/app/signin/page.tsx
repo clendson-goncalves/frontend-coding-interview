@@ -51,7 +51,7 @@ export default function SignIn() {
                                 <Label htmlFor="password" className="text-sm font-bold ">
                                     Password
                                 </Label>
-                                <a href="#" className="text-sm text-blue-500 hover:text-blue-600">
+                                <a href="#" className="text-sm text-[#0075EB] hover:text-blue-500">
                                     Forgot password?
                                 </a>
                             </div>
@@ -65,7 +65,7 @@ export default function SignIn() {
                             />
                         </div>
 
-                        <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-600 text-white py-6 rounded-md">
+                        <Button type="submit" className="w-full text-md bg-[#0075EB] hover:bg-blue-500 text-white py-5.5 rounded-md">
                             Sign in
                         </Button>
                     </form>
