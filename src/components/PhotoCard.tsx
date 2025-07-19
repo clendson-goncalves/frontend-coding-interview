@@ -2,23 +2,7 @@
 
 import { Star } from "lucide-react"
 import Image from "next/image"
-
-interface PexelsPhoto {
-    id: number
-    photographer: string
-    photographer_url: string
-    avg_color: string
-    src: {
-        medium: string
-    }
-    alt: string
-}
-
-interface PhotoCardProps {
-    photo: PexelsPhoto
-    isLiked: boolean
-    onToggleLike: () => void
-}
+import { PhotoCardProps } from "@/types/photo"
 
 export default function PhotoCard({ photo, isLiked, onToggleLike }: PhotoCardProps) {
     return (
@@ -36,13 +20,13 @@ export default function PhotoCard({ photo, isLiked, onToggleLike }: PhotoCardPro
                 <p className="text-sm font-bold text-[#111827]">{photo.photographer}</p>
                 <p className="text-sm font-normal text-[#111827] line-clamp-1">{photo.alt}</p>
                 <div className="flex items-center gap-2">
-                    <p className="text-sm text-[#374824]">#{photo.id}</p>
+                    <div className="text-sm" style={{ color: photo.avg_color }} >#{photo.id}</div>
                     <div className="w-3 h-3" style={{ backgroundColor: photo.avg_color }} />
                 </div>
             </div>
 
             <div className="flex gap-1 ml-auto">
-                <img src="/links.svg" className="w-3 h-3" alt="Portfolio" />
+                <Image src="/links.svg" width={3} height={3} alt="Portfolio" />
                 <a
                     href={photo.photographer_url}
                     target="_blank"

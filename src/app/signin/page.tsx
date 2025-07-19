@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Image from "next/image"
 
 export default function SignIn() {
     const [username, setUsername] = useState("testing@testing.com")
@@ -25,7 +26,7 @@ export default function SignIn() {
         <div className="flex sm:min-h-screen items-center justify-center px-4 py-10">
             <div className="space-y-6 w-xs">
                 <div className="flex justify-center">
-                    <img src="/logo.svg" alt="Logo" />
+                    <Image src="/logo.svg" alt="Logo" width={75} height={75} />
                 </div>
 
                 <div className="space-y-6">

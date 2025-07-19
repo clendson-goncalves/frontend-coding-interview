@@ -2,22 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import { motion } from "framer-motion";
 import PhotoCard from "@/components/PhotoCard"
-
-interface PexelsPhoto {
-    id: number
-    photographer: string
-    photographer_url: string
-    avg_color: string
-    src: {
-        medium: string
-    }
-    alt: string
-}
-
-interface PexelsResponse {
-    photos: PexelsPhoto[]
-}
+import { PexelsPhoto, PexelsResponse } from "@/types/photo"
+import Image from "next/image"
 
 export default function Photos() {
     const [photos, setPhotos] = useState<PexelsPhoto[]>([])
@@ -71,17 +59,17 @@ export default function Photos() {
     if (loading) {
         return (
             <div className="min-h-screen flex items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+                <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-500"></div>
             </div>
         )
     }
 
     return (
         <div className="flex items-center justify-center">
-            <div className="space-y-6 p-6">
-                <div className="flex items-center justify-between">
+            <div className="space-y-6 p-6 w-full max-w-xl">
+                <div className="flex items-center justify-between px-4">
                     <div className="flex flex-col gap-y-4 items-start">
-                        <img src="/logo.svg" alt="Logo" />
+                        <Image src="/logo.svg" alt="Logo" width={75} height={75} />
                         <h1 className="text-center text-xl font-semibold">All photos</h1>
                     </div>
 
@@ -92,14 +80,21 @@ export default function Photos() {
                     </button>
                 </div>
 
-                <div className="grid grid-cols-1 gap-2">
-                    {photos.map((photo) => (
-                        <PhotoCard
+                <div className="grid grid-cols-1 gap-2 mt-8">
+                    {photos.map((photo, idcount) => (
+                        <motion.div
                             key={photo.id}
-                            photo={photo}
-                            isLiked={likedPhotos.has(photo.id)}
-                            onToggleLike={() => toggleLike(photo.id)}
-                        />
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: idcount * 0.05, duration: 0.5 }}
+                        >
+                            <PhotoCard
+                                key={photo.id}
+                                photo={photo}
+                                isLiked={likedPhotos.has(photo.id)}
+                                onToggleLike={() => toggleLike(photo.id)}
+                            />
+                        </motion.div>
                     ))}
                 </div>
             </div>
