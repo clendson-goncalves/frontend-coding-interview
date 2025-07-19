@@ -26,7 +26,7 @@ export default function PhotoCard({ photo, isLiked, onToggleLike }: PhotoCardPro
             </div>
 
             <div className="flex gap-1 ml-auto">
-                <Image src="/links.svg" width={3} height={3} alt="Portfolio" />
+                <Image src="/links.svg" width={12} height={12} alt="Portfolio" />
                 <a
                     href={photo.photographer_url}
                     target="_blank"
