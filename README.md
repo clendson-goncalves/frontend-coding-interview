@@ -22,6 +22,11 @@ A simple, responsive photo gallery web application built with Next.js, TypeScrip
 - **Storage**: localStorage (for authentication and likes)
 - **ESLint**: for code quality
 
+## Preview
+<img width="1422" height="736" alt="image" src="https://github.com/user-attachments/assets/d4f681ce-e603-41bd-9db1-727a168982a3" />
+<img width="1401" height="741" alt="image" src="https://github.com/user-attachments/assets/d04a00ac-abdb-4ffa-acdf-83398f25a5fd" />
+
+
 ## Environment Variables
 
 No environment variables required - API key is included in the code for demo purposes.
